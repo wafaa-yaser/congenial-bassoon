@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوة زفاف ملكية</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-card">
+        
+        <div class="gold-dust-container" id="goldDust"></div>
+
+        <!-- 1. غلاف الدعوة -->
+        <div class="envelope-cover" id="envelope" style="background-image: url('cover.jpg');">
+            <div class="cover-overlay"></div>
+            
+            <div class="cover-content" id="coverContent">
+                <div class="royal-frame-top">⚜ ✧ ⚜</div>
+                <h1 class="cover-title gold-solid-text">دعوة زفاف</h1>
+                <p class="click-hint pulse-animation">اضغطوا على الختم لفتح الدعوة ↓</p>
+                
+                <div class="seal-container" onclick="openInvitation()">
+                    <div class="seal-glow"></div>
+                    <img src="seal.png" alt="الختم" class="seal-img animated-seal">
+                    <div class="seal-welcome-badge">✦ أهلاً وسهلاً بالمقام الرفيع ✦</div>
+                </div>
+                <div class="royal-frame-bottom">⚜ ✧ ⚜</div>
+            </div>
+        </div>
+
+        <!-- 2. المحتوى الداخلي -->
+        <div class="invitation-content" id="invitationContent" style="display: none; background-image: url('inner-bg.jpg');">
+            
+            <div class="hearts-rain" id="heartsContainer"></div>
+
+            <div class="video-card">
+                <div class="video-frame">
+                    <video id="weddingVideo" loop playsinline src="vv.mp4"></video>
+                    <button class="sound-btn" onclick="toggleSound(event)">🔊 تشغيل الصوت</button>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="crown-icon">👑</div>
+                <h2 class="main-heading solid-gold-heading">حفل زفاف</h2>
+                
+                <p class="intro-text">بقلوب تملؤها البهجة والسرور، تتشرف</p>
+                <h3 class="family-name royal-family-title">عائلة نمر السفر</h3>
+                <p class="intro-text royal-invitation-text">بدعوتكم الكريمة لحضور حفل زفاف أبنائهم وبناتهم</p>
+
+                <div class="luxury-boxes-wrapper">
+                    <div class="luxury-name-box">
+                        <span class="box-star">⚜</span>
+                        <span class="couple-text">العريس صابر &amp; أميرته</span>
+                        <span class="box-star">⚜</span>
+                    </div>
+                    
+                    <div class="luxury-name-box">
+                        <span class="box-star">⚜</span>
+                        <span class="couple-text">العريس نضال &amp; أميرته</span>
+                        <span class="box-star">⚜</span>
+                    </div>
+                    
+                    <div class="luxury-name-box">
+                        <span class="box-star">⚜</span>
+                        <span class="couple-text">العريس محمد &amp; أميرته</span>
+                        <span class="box-star">⚜</span>
+                    </div>
+                </div>
+
+                <p class="welcome-note royal-welcome-note">مرحباً بكم في ليلة العمر، حضوركم يبهجنا وفرحتنا تكتمل بوجودكم معنا.</p>
+
+                <div class="quran-card">
+                    <img src="aya.jpg" alt="آية قرآنية">
+                </div>
+
+                <div class="slider-box">
+                    <img id="sliderImage" src="1.jpg" alt="صور الزفاف" class="fade-in">
+                </div>
+
+                <!-- بوكسات الحناء والعرس بخلفيات ملونة وواضحة جداً بدون أي تغشية -->
+                <div class="custom-boxes-wrapper">
+                    
+                    <div class="custom-box-card">
+                        <img src="henna.jpg" alt="بوكس الحناء" class="box-bg-img">
+                        <div class="box-text-overlay">
+                            <div class="box-header-title">ليلة الحناء</div>
+                            <p class="box-date">📅 الأربعاء، 07/10/2026</p>
+                            <p class="box-time">🕒 الساعة 05:00 مساءً</p>
+                        </div>
+                    </div>
+
+                    <div class="custom-box-card">
+                        <img src="wedding.jpg" alt="بوكس العرس" class="box-bg-img">
+                        <div class="box-text-overlay">
+                            <div class="box-header-title">ليلة الزفاف</div>
+                            <p class="box-date">📅 الخميس، 08/10/2026</p>
+                            <p class="box-time">🕒 الساعة 04:00 مساءً</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="countdown-card">
+                    <div class="countdown-title">⏳ العد التنازلي لليلة العمر</div>
+                    <div class="timer-boxes">
+                        <div class="timer-unit"><span id="days">00</span><label>يوم</label></div>
+                        <div class="timer-unit"><span id="hours">00</span><label>ساعة</label></div>
+                        <div class="timer-unit"><span id="minutes">00</span><label>دقيقة</label></div>
+                        <div class="timer-unit"><span id="seconds">00</span><label>ثانية</label></div>
+                    </div>
+                    
+                    <div class="date-display">
+                        <span>الخميس</span>
+                        <span>أكتوبر</span>
+                        <span>2026</span>
+                    </div>
+                    <div class="day-circle">08</div>
+                    <div class="time-text">🕒 الساعة 04:00 مساءً</div>
+                </div>
+
+                <div class="rules-box-card">
+                    <div class="rule-item">
+                        <span class="rule-icon">📸</span>
+                        <p>نرجو عدم التصوير لخصوصية الحفل</p>
+                    </div>
+                    <div class="rule-divider"></div>
+                    <div class="rule-item">
+                        <span class="rule-icon">👶</span>
+                        <p>جنة الأطفال منازلهم</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'];
+        let currentIndex = 0;
+
+        function openInvitation() {
+            const envelope = document.getElementById('envelope');
+            envelope.classList.add('door-open-animation');
+
+            setTimeout(() => {
+                envelope.style.display = 'none';
+                const content = document.getElementById('invitationContent');
+                content.style.display = 'block';
+                content.classList.add('fade-in-content');
+                
+                const video = document.getElementById('weddingVideo');
+                video.muted = false;
+                video.play().catch(() => {
+                    video.muted = true;
+                    video.play();
+                });
+
+                createHearts();
+                createGoldDust();
+                startImageSlider();
+                startCountdown();
+            }, 800);
+        }
+
+        function toggleSound(e) {
+            const video = document.getElementById('weddingVideo');
+            video.muted = !video.muted;
+            e.target.innerText = video.muted ? "🔊 تشغيل الصوت" : "🔊 كتم الصوت";
+        }
+
+        function createHearts() {
+            const container = document.getElementById('heartsContainer');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                container.appendChild(heart);
+            }
+        }
+
+        function createGoldDust() {
+            const dustContainer = document.getElementById('goldDust');
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('gold-particle');
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                particle.style.animationDelay = (Math.random() * 2) + 's';
+                dustContainer.appendChild(particle);
+            }
+        }
+
+        function startImageSlider() {
+            const imgElement = document.getElementById('sliderImage');
+            setInterval(() => {
+                imgElement.classList.remove('fade-in');
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imgElement.src = images[currentIndex];
+                    imgElement.classList.add('fade-in');
+                }, 300);
+            }, 3500);
+        }
+
+        function startCountdown() {
+            const targetDate = new Date('October 8, 2026 16:00:00').getTime();
+
+            setInterval(() => {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+
+                if (difference > 0) {
+                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                    document.getElementById('days').innerText = days;
+                    document.getElementById('hours').innerText = hours;
+                    document.getElementById('minutes').innerText = minutes;
+                    document.getElementById('seconds').innerText = seconds;
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
